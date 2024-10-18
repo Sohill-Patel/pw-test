@@ -7,11 +7,18 @@ test('test login success', async ({loginPage, page }) => {
     await expect(page.getByText('Logged In Successfully Congratulations student. You successfully logged in! Log')).toBeVisible(); 
 });
 
-test('test contact - submit form no data', async ({page }) => {
+test('test contact - submit form no data', {
+    annotation: {
+        type: "AcceptanceCriteria",
+        description: "AC-55"
+    }
+    }, 
+    async ({page }) => {
+    
     const contact = new ContactPage(page) 
     await contact.GoTo()
     await page.getByRole('button', { name: 'Submit' }).click();
-
+    await new Promise(f => setTimeout(f, 100000));
     await expect(page.getByText('FirstThis field is required.')).toBeVisible();
     await expect(page.locator('id=wpforms-161-field_0')).toBeVisible();
 
