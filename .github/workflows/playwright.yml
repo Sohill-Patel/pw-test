@@ -28,6 +28,6 @@ jobs:
         retention-days: 30
 
     - id: foo
-      uses: Sohill-Patel/get-ac-coverage@c7b344f0a768c1566b657114b1663e45487138ce
+      uses: Sohill-Patel/get-ac-coverage@8c3325bac044afb1d9209e4ec4bdec3fad60028d
       with:
         json-test-report: 'Mona the Octocat'
