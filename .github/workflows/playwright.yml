@@ -26,3 +26,8 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+    - id: foo
+      uses: Sohill-Patel/get-ac-coverage
+      with:
+        json-test-report: 'Mona the Octocat'
