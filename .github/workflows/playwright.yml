@@ -30,6 +30,7 @@ jobs:
         retention-days: 30
 
     - name: Get composite run steps repository
+      if: always()
       uses: actions/checkout@v2
       with:
         repository: Sohill-Patel/get-ac-coverage
@@ -41,6 +42,7 @@ jobs:
         path: .github/myaction
 
     - id: foo
+      if: always()
       uses: ./.github/myaction
       with:
         FILENAME: "testreport"
