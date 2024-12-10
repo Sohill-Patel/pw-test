@@ -43,10 +43,12 @@ jobs:
 
     - id: foo
       if: always()
-      uses: ./composite/get-ac-coverage
-      with:
-        FILENAME: "testreport"
-        NOTION-TOKEN: "test-token"
-        NOTION-DB: "test-db"
+      run: ls -ltr
+      shell: bash
+      # uses: ./composite/get-ac-coverage
+      # with:
+      #   FILENAME: "testreport"
+      #   NOTION-TOKEN: "test-token"
+      #   NOTION-DB: "test-db"
         
 
