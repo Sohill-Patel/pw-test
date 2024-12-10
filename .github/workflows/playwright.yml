@@ -39,11 +39,11 @@ jobs:
         # Personal access token to check out private repository
         token: ${{ secrets.PAT_TOKEN }}
         # Indicate where to check action out to
-        path: .github/myaction
+        path: composite/get-ac-coverage
 
     - id: foo
       if: always()
-      uses: ${GITHUB_WORKSPACE}/.github/myaction
+      uses: composite/get-ac-coverage
       with:
         FILENAME: "testreport"
         NOTION-TOKEN: "test-token"
