@@ -30,7 +30,7 @@ jobs:
         retention-days: 30
 
     - id: foo
-      uses: Sohill-Patel/get-ac-coverage
+      uses: Sohill-Patel/get-ac-coverage/
       with:
         FILENAME: "testreport"
         NOTION-TOKEN: "test-token"
