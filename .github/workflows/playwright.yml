@@ -43,7 +43,7 @@ jobs:
 
     - id: foo
       if: always()
-      uses: '${GITHUB_WORKSPACE}/.github/myaction'
+      uses: ${GITHUB_WORKSPACE}/.github/myaction
       with:
         FILENAME: "testreport"
         NOTION-TOKEN: "test-token"
