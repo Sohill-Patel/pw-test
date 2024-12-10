@@ -43,7 +43,7 @@ jobs:
 
     - id: foo
       if: always()
-      run: cd composite && ls -ltr
+      run: cd composite/get-ac-coverage && ls -ltr
       shell: bash
       # uses: ./composite/get-ac-coverage
       # with:
