@@ -35,7 +35,7 @@ jobs:
       with:
         repository: Sohill-Patel/get-ac-coverage
         # Select revision
-        ref: main
+        ref: 'main'
         # Personal access token to check out private repository
         token: ${{ secrets.PAT_TOKEN }}
         # Indicate where to check action out to
