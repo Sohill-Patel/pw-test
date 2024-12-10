@@ -43,7 +43,7 @@ jobs:
 
     - id: foo
       if: always()
-      uses: /composite/get-ac-coverage
+      uses: ./composite/get-ac-coverage
       with:
         FILENAME: "testreport"
         NOTION-TOKEN: "test-token"
