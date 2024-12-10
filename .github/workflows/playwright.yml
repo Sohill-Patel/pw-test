@@ -29,8 +29,19 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
+    - name: Get composite run steps repository
+      uses: actions/checkout@v2
+      with:
+        repository: Sohill-Patel/get-ac-coverage
+        # Select revision
+        ref: main
+        # Personal access token to check out private repository
+        token: ${{ secrets.PAT_TOKEN }}
+        # Indicate where to check action out to
+        path: .github/myaction
+
     - id: foo
-      uses: Sohill-Patel/get-ac-coverage/@main
+      uses: ./.github/myaction
       with:
         FILENAME: "testreport"
         NOTION-TOKEN: "test-token"
