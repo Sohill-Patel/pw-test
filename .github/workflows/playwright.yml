@@ -40,9 +40,14 @@ jobs:
         token: ${{ secrets.PAT_TOKEN }}
         # Indicate where to check action out to
         path: composite/get-ac-coverage
+    
+    - id: Drop-ref
+      if: always()
+      run: echo The ref is ${{github.ref}} 
+      shell: bash
 
     - id: foo
-      if: always() && github.ref == 'workflow-example'
+      if: always() && github.ref == 'main'
       # run: cd composite/get-ac-coverage && ls -ltr
       run: echo It ran!
       shell: bash
