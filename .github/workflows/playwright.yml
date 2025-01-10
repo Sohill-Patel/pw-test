@@ -46,7 +46,7 @@ jobs:
       run: echo The event is ${{github.event_name}} and the base ref is ${{github.base_ref}} and the ref is ${{github.ref}}
       shell: bash
 
-    - id: foo
+    - id: run-ref
       if: always() && github.event_name == 'push'
       # run: cd composite/get-ac-coverage && ls -ltr
       run: echo It ran again!
