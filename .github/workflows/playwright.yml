@@ -49,7 +49,7 @@ jobs:
     - id: foo
       if: always() && github.event_name == 'push'
       # run: cd composite/get-ac-coverage && ls -ltr
-      run: echo It ran!
+      run: echo It ran again!
       shell: bash
       # uses: ./composite/get-ac-coverage/
       # with:
