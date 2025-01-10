@@ -43,11 +43,11 @@ jobs:
     
     - id: Drop-ref
       if: always()
-      run: echo The ref is ${{github.ref}} 
+      run: echo The ref is ${{github.base_ref}} 
       shell: bash
 
     - id: foo
-      if: always() && github.ref == 'main'
+      if: always() && github.base_ref == 'main'
       # run: cd composite/get-ac-coverage && ls -ltr
       run: echo It ran!
       shell: bash
