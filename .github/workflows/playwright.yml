@@ -1,7 +1,7 @@
 name: Playwright Tests
 on:
-  # push:
-  #   branches: [ main, master ]
+  push:
+    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -42,13 +42,14 @@ jobs:
         path: composite/get-ac-coverage
 
     - id: foo
-      if: always()
+      if: always() && github.ref == "main"
       # run: cd composite/get-ac-coverage && ls -ltr
-      # shell: bash
-      uses: ./composite/get-ac-coverage/
-      with:
-        FILENAME: "testreport"
-        NOTION-TOKEN: "test-token"
-        NOTION-DB: "test-db"
+      run: echo It ran!
+      shell: bash
+      # uses: ./composite/get-ac-coverage/
+      # with:
+      #   FILENAME: "testreport"
+      #   NOTION-TOKEN: "test-token"
+      #   NOTION-DB: "test-db"
         
 
