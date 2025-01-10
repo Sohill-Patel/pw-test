@@ -1,0 +1,12 @@
+name: Master
+on:
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Pause for 25 seconds
+        run: |
+          echo "Testing"
+          sleep 25
