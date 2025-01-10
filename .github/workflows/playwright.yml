@@ -42,7 +42,7 @@ jobs:
         path: composite/get-ac-coverage
 
     - id: foo
-      if: always() && github.ref == "main"
+      if: always() && github.ref == 'workflow-example'
       # run: cd composite/get-ac-coverage && ls -ltr
       run: echo It ran!
       shell: bash
