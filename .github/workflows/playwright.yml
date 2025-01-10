@@ -43,7 +43,7 @@ jobs:
     
     - id: Drop-ref
       if: always()
-      run: echo The ref is ${{github.base_ref}} 
+      run: echo The event is ${{github.event_name}} and the ref is ${{github.ref}}
       shell: bash
 
     - id: foo
