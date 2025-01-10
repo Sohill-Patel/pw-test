@@ -9,5 +9,5 @@ jobs:
       - name: Pause for 25 seconds
         id: example-id
         run: |
-          echo "Testing"
+          echo "Testing workflow"
           sleep 25
