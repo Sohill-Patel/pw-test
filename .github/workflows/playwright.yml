@@ -40,15 +40,21 @@ jobs:
         token: ${{ secrets.PAT_TOKEN }}
         # Indicate where to check action out to
         path: composite/get-ac-coverage
+    
+    - id: Drop-ref
+      if: always()
+      run: echo The event is ${{github.event_name}} and the ref is ${{github.ref}}
+      shell: bash
 
     - id: foo
-      if: always()
+      if: always() && github.base_ref == 'main'
       # run: cd composite/get-ac-coverage && ls -ltr
-      # shell: bash
-      uses: ./composite/get-ac-coverage/
-      with:
-        FILENAME: "testreport"
-        NOTION-TOKEN: "test-token"
-        NOTION-DB: "test-db"
+      run: echo It ran!
+      shell: bash
+      # uses: ./composite/get-ac-coverage/
+      # with:
+      #   FILENAME: "testreport"
+      #   NOTION-TOKEN: "test-token"
+      #   NOTION-DB: "test-db"
         
 
