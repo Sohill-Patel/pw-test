@@ -43,13 +43,13 @@ jobs:
     
     - id: Drop-ref
       if: always()
-      run: echo The event is ${{github.event_name}} and the ref is ${{github.ref}}
+      run: echo The event is ${{github.event_name}} and the base ref is ${{github.base_ref}}
       shell: bash
 
     - id: foo
-      if: always() && github.base_ref == 'main'
+      if: always() && github.event_name == 'push'
       # run: cd composite/get-ac-coverage && ls -ltr
-      run: echo It ran!
+      run: echo It ran again!
       shell: bash
       # uses: ./composite/get-ac-coverage/
       # with:
